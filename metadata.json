@@ -1,0 +1,5 @@
+{
+  "name": "SPPA Back Office (Central Carbon v1)",
+  "description": "A responsive admin dashboard clone using React, Tailwind CSS, and DaisyUI, featuring data visualization and user management interfaces.",
+  "requestFramePermissions": []
+}

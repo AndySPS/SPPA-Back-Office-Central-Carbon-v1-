@@ -1,0 +1,67 @@
+:root {
+  /* --- Brand Colors --- */
+  --color-brand-primary: #FA0001; /* Vibrant Red */
+  --color-brand-secondary: #000000; /* Sharp Black */
+  --color-brand-subtle: #fff1f2; /* Faint red/pink tint */
+  
+  /* --- Semantic Colors --- */
+  --color-success: #059669; /* emerald-600 */
+  --color-success-subtle: #ecfdf5; /* emerald-50 */
+  --color-accent: #0d9488; /* teal-600 */
+  --color-accent-subtle: #ccfbf1; /* teal-100 */
+  --color-danger: #b91c1c; /* red-700 - Slightly darker red for clear distinction if needed */
+  --color-danger-subtle: #fef2f2; /* red-50 */
+
+  /* --- Neutral Colors (Text & Backgrounds) --- */
+  --color-text-primary: #000000; /* Sharp Black */
+  --color-text-secondary: #333333; /* Dark Gray */
+  --color-text-tertiary: #6b7280; /* gray-500 */
+  --color-text-disabled: #9ca3af; /* gray-400 */
+  --color-text-inverse: #ffffff; /* white */
+
+  --color-bg-canvas: #f3f4f6; /* gray-100 - Light gray background for contrast */
+  --color-bg-surface: #ffffff; /* white - Card Background */
+  --color-bg-surface-hover: #f9fafb; /* gray-50 */
+  
+  --color-border-default: #e5e7eb; /* gray-200 */
+  --color-border-subtle: #f3f4f6; /* gray-100 */
+
+  /* --- Spacing System --- */
+  --space-xs: 0.25rem; /* 4px (1) */
+  --space-sm: 0.5rem;  /* 8px (2) */
+  --space-md: 1rem;    /* 16px (4) */
+  --space-lg: 1.5rem;  /* 24px (6) */
+  --space-xl: 2rem;    /* 32px (8) */
+
+  /* --- Typography --- */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* --- Borders & Radius --- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-full: 9999px;
+}
+
+[data-theme='dark'] {
+  --color-bg-canvas: #000000;
+  --color-bg-surface: #111827;
+  --color-bg-surface-hover: #1f2937;
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d1d5db;
+  --color-text-tertiary: #9ca3af;
+  
+  --color-border-default: #374151;
+  --color-border-subtle: #111827;
+}
