@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import CarbonEmissions from './components/CarbonEmissions';
 import Trend from './components/Trend';
@@ -10,6 +11,8 @@ import EditProfile from './components/EditProfile';
 import Settings from './components/Settings';
 
 const App: React.FC = () => {
+  // Auth state - default false to show Login first
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [currentView, setCurrentView] = useState('dashboard');
 
@@ -19,6 +22,15 @@ const App: React.FC = () => {
 
   const handleNavigate = (view: string) => {
     setCurrentView(view);
+  };
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+    setCurrentView('dashboard'); // Reset to dashboard on login
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
   };
 
   const renderContent = () => {
@@ -42,6 +54,10 @@ const App: React.FC = () => {
     }
   };
 
+  if (!isAuthenticated) {
+    return <Login onLogin={handleLogin} />;
+  }
+
   return (
     <div className="flex h-screen overflow-hidden font-sans bg-[var(--color-bg-canvas)] text-[var(--color-text-primary)]">
       <Sidebar 
@@ -54,6 +70,7 @@ const App: React.FC = () => {
         <Header 
           onToggleSidebar={toggleSidebar} 
           onNavigate={handleNavigate}
+          onLogout={handleLogout}
         />
         
         <main className="flex-1 overflow-x-hidden overflow-y-auto p-[var(--space-lg)]">

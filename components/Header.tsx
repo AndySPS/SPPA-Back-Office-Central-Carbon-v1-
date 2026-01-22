@@ -5,9 +5,10 @@ import { useTheme } from '../hooks/useTheme';
 interface HeaderProps {
   onToggleSidebar: () => void;
   onNavigate: (view: string) => void;
+  onLogout: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onNavigate }) => {
+const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onNavigate, onLogout }) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -80,7 +81,14 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onNavigate }) => {
              </ul>
              <div className="h-px bg-[var(--color-border-subtle)] w-full"></div>
              <ul className="menu w-full p-[var(--space-sm)]">
-               <li><a className="py-[var(--space-sm)] rounded-md text-[length:var(--font-size-sm)] font-medium text-[var(--color-danger)] hover:bg-[var(--color-danger-subtle)]">Sign out</a></li>
+               <li>
+                  <a 
+                    onClick={onLogout}
+                    className="py-[var(--space-sm)] rounded-md text-[length:var(--font-size-sm)] font-medium text-[var(--color-danger)] hover:bg-[var(--color-danger-subtle)]"
+                  >
+                    Sign out
+                  </a>
+               </li>
              </ul>
           </div>
         </div>
